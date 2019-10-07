@@ -7,9 +7,7 @@ import javax.validation.Valid;
 import com.technical.test.model.Person;
 import com.technical.test.repository.PersonRepository;
 
-import org.hibernate.ResourceClosedException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -33,24 +31,6 @@ public class PersonController {
 
   }
 
-
-  // @GetMapping("/users/{id}")
-
-  // public ResponseEntity<Person> getUsersById(@PathVariable(value = "id") Long userId)
-
-  //     throws ResourceClosedException {
-
-  //   Person person =
-
-  //       personRepository
-
-  //           .findById(userId)
-
-  //           .orElseThrow(() -> new ResourceClosedException("User not found on :: " + userId));
-
-  //   return ResponseEntity.ok().body(person);
-
-  // }
 
   @GetMapping("/users/search/{searchItem}")
 
