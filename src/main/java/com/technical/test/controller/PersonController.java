@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RestController
 
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = {"https://technicaltestclient.herokuapp.com/","http://localhost:4200"})
+@CrossOrigin(origins = {"https://technicaltestclient.herokuapp.com","http://localhost:4200"})
 
 public class PersonController {
 
