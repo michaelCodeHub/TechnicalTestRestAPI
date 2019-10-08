@@ -32,7 +32,7 @@ public class TestApplicationTests {
 	}
 
 	@Test
-	public void testGetAllUsers() {
+	public void testGetAllPersons() {
 		HttpHeaders headers = new HttpHeaders();
 		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
 
@@ -43,21 +43,11 @@ public class TestApplicationTests {
 	}
 
 	@Test
-	public void testGetUserById() {
-		Person person = restTemplate.getForObject(getRootUrl() + "/users/1", Person.class);
+	public void testGetSearchItem() {
+		Person person = restTemplate.getForObject(getRootUrl() + "/users/test", Person.class);
 		System.out.println(person.getFirstName());
 		Assert.assertNotNull(person);
 	}
 
-	@Test
-	public void testCreateUser() {
-		Person user = new Person();
-		user.setFirstName("admin");
-		user.setLastName("admin");
-
-		ResponseEntity<Person> postResponse = restTemplate.postForEntity(getRootUrl() + "/users", user, Person.class);
-		Assert.assertNotNull(postResponse);
-		Assert.assertNotNull(postResponse.getBody());
-	}
 
 }
